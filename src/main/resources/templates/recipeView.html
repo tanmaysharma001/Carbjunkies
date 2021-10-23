@@ -1,0 +1,149 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale= 1">
+
+    <title>View Recipe</title>
+
+    <!--adding font awesome button link-->
+    <link rel="stylesheet"
+          th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css}"
+          integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- style.css -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+    <!-- adding bootstrap -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap-grid.css}">
+
+    <link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+    <link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
+    <link th:href="@{https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap}" rel="stylesheet">
+
+</head>
+
+
+<body>
+<!-- Navigation Bar-->
+<div class="navbar">
+
+    <input type="checkbox" id="click">
+    <label for="click" class="menu-btn">
+        <i class="fa fa-bars"></i>
+    </label>
+
+    <ul>
+        <li>
+            <a th:href="@{/home}">home</a>
+        </li>
+        <li>
+            <a th:href="@{/home}">posts</a>
+        </li>
+        <li>
+            <a th:href="@{/home}">About</a>
+        </li>
+        <li>
+            <a th:href="@{/home}">reviews</a>
+        </li>
+        <li>
+            <a th:href="@{/home}">recipes</a>
+        </li>
+    </ul>
+</div>
+
+
+<!--end of headers-->
+
+
+<div class="card-wrapper">
+    <div class="card">
+        <!-- card left -->
+        <div class="product-imgs">
+            <div class="img-display">
+                <div class="img-showcase">
+                    <img th:src="${recipeModel.imageURL1}">
+                    <img th:src="${recipeModel.imageURL2}">
+                    <img th:src="${recipeModel.imageURL3}">
+                    <img th:src="${recipeModel.imageURL4}">
+                    <img th:src="${recipeModel.imageURL5}">
+                </div>
+            </div>
+            <div class="img-select">
+                <div class="img-item">
+                    <a th:href="@{#}" data-id="1">
+                        <img th:src="${recipeModel.imageURL1}" alt="image1">
+                    </a>
+                </div>
+                <div class="img-item">
+                    <a th:href="@{#}" data-id="2">
+                        <img th:src="${recipeModel.imageURL2}" alt="image2">
+                    </a>
+                </div>
+                <div class="img-item">
+                    <a th:href="@{#}" data-id="3">
+                        <img th:src="${recipeModel.imageURL3}" alt="image3">
+                    </a>
+                </div>
+                <div class="img-item">
+                    <a th:href="@{#}" data-id="4">
+                        <img th:src="${recipeModel.imageURL4}" alt="image4">
+                    </a>
+                </div>
+                <div class="img-item">
+                    <a th:href="@{#}" data-id="5">
+                        <img th:src="${recipeModel.imageURL5}" alt="image5">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- card right -->
+        <div class="product-content">
+            <h2 class="product-title" th:text="${recipeModel.name}">Chicken Tikka</h2>
+            <div class="product-rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half"></i>
+                <span th:text="${recipeModel.rating}">4.5/5</span>
+            </div>
+
+            <div class="product-detail">
+                <p th:text="${recipeModel.description}">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Pellentesque risus urna, feugiat vitae ipsum ac, sodales accumsan sem. Nunc suscipit ligula vitae
+                    turpis ultrices posuere. Quisque gravida eu velit id interdum. Ut faucibus, diam ac blandit auctor,
+                    neque metus blandit ligula, eget placerat tellus tellus vel eros. Mauris vitae ex feugiat, aliquet
+                    risus sit amet, interdum erat. Donec pharetra pulvinar sapien non tincidunt. </br></br>Aenean at
+                    turpis nec elit maximus tempor vel et elit. Vivamus vestibulum ullamcorper cursus.
+
+                    </br></br>Maecenas at varius arcu. In ut nunc a risus interdum porttitor. Curabitur vitae nisl
+                    velit. Aliquam a elementum velit, a tristique quam. Praesent non nunc quis ex accumsan dapibus quis
+                    in tellus. Duis non nulla pretium, viverra dolor at, ullamcorper ligula. Morbi congue sit amet quam
+                    quis pretium. Mauris venenatis orci sed erat tempus suscipit.
+
+                </p>
+            </div>
+
+
+            <div class="social-links">
+                <p>Share At: </p>
+                <a th:href="@{https://www.instagram.com/carbjunkies/}">
+                    <i class="fa fa-instagram"></i>
+                </a>
+                <a th:href="@{whatsapp://send?text=myspecifiedurlgoeshere.com}">
+                    <i class="fa fa-whatsapp"></i>
+                </a>
+                <a th:href="@{https://www.facebook.com/}">
+                    <i class="fa fa-facebook"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>

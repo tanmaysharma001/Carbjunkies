@@ -1,0 +1,102 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale= 1">
+
+    <title>View Recipe</title>
+
+    <!--adding font awesome button link-->
+    <link rel="stylesheet"
+          th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css}"
+          integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- style.css -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+    <!-- adding bootstrap -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap-grid.css}">
+
+    <link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+    <link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
+    <link th:href="@{https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap}" rel="stylesheet">
+
+</head>
+
+
+<body>
+<!-- Navigation Bar-->
+<div class="navbar">
+
+    <input type="checkbox" id="click">
+    <label for="click" class="menu-btn">
+        <i class="fa fa-bars"></i>
+    </label>
+
+    <ul>
+        <li>
+            <a th:href="@{/home}">home</a>
+        </li>
+        <li>
+            <a th:href="@{/home}">posts</a>
+        </li>
+        <li>
+            <a th:href="@{/home}">About</a>
+        </li>
+        <li>
+            <a th:href="@{/home}">reviews</a>
+        </li>
+        <li>
+            <a th:href="@{/home}">recipes</a>
+        </li>
+    </ul>
+</div>
+
+<!--                    Remove this code for loop-->
+<!--<div th:each="recipe : ${allRecipes}">-->
+<!--    <h2 th:text="${recipe.name}"></h2>-->
+<!--</div>-->
+
+<!--List Section-->
+<div class="extra__section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-5 mt-5" th:each="recipe : ${allRecipes}">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img th:src="${recipe.imageURL1}" class="image__responsive">
+                    </div>
+                    <div class="col-md-8 bg__dark text__light p-3">
+                        <h4 th:text="${recipe.name}">The best chicken tikka recipe</h4>
+                        <p>Click on the button below to read the recipe in detail. Also don't forget to share with your loved ones and let us know how you liked it!</p>
+                        <a th:href="${'/recipeView/'+ recipe.UUID}" class="btn__light">Read Recipe</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Subscribe section-->
+<div class="subscribe__section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <p>Signup for email updates to get each month's latest newsletter.</p>
+            </div>
+            <div class="col-md-4">
+                <form>
+                    <input type="text">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

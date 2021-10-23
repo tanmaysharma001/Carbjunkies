@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<div class="max-width-1 m-auto">
+    <hr>
+</div>
+<div class="contact-content font1 max-width-1 m-auto">
+    <div class="max-width-1 m-auto mx-1">
+        <h2>Insert New Recipe Here</h2>
+        <form action="#" th:action="@{/recipeAdd}" th:object="${recipeModel}" method="post">
+        <div class="contact-form">
+            <div class="form-box">
+                <input type="text" th:field="*{name}" placeholder="Enter Recipe Name">
+            </div>
+            <div class="form-box">
+                <input type="text" th:field="*{rating}" placeholder="Enter Rating">
+            </div>
+
+            <div class="form-box">
+                <textarea name="" id="" cols="60" rows="30" th:field="*{description}" placeholder="Enter Recipe Description"></textarea>
+            </div>
+
+            <div class="form-box">
+                <input type="text" th:field="*{imageURL1}" placeholder="Enter Image URL 1">
+            </div>
+            <div class="form-box">
+                <input type="text" th:field="*{imageURL2}" placeholder="Enter Image URL 2">
+            </div>
+            <div class="form-box">
+                <input type="text" th:field="*{imageURL3}" placeholder="Enter Image URL 3">
+            </div>
+            <div class="form-box">
+                <input type="text" th:field="*{imageURL4}" placeholder="Enter Image URL 4">
+            </div>
+            <div class="form-box">
+                <input type="text" th:field="*{imageURL5}"placeholder="Enter Image URL 5">
+            </div>
+            <div class="form-box">
+                <button type="submit" class="btn">Submit</button>
+            </div>
+
+<!--            <div class="form-box">-->
+<!--                <input multiple class="file-upload-input" type="file"  accept="Image/*">-->
+<!--            </div>-->
+
+        </div>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

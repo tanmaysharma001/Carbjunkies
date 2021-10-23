@@ -1,0 +1,252 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale= 1">
+
+  <title>Food Blog</title>
+
+  <!--adding font awesome button link-->
+  <link rel="stylesheet"
+        th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css}"
+        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+  <!-- style.css -->
+  <link rel="stylesheet" th:href="@{css/style.css}">
+
+  <!-- adding bootstrap -->
+  <link rel="stylesheet" th:href="@{css/bootstrap-grid.css}">
+
+  <link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+  <link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
+  <link th:href="@{https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap}" rel="stylesheet">
+
+
+</head>
+<body>
+<!-- Navigation Bar -->
+<div class="navbar">
+
+  <input type="checkbox" id="click">
+  <label for="click" class="menu-btn">
+    <i class="fa fa-bars"></i>
+  </label>
+
+  <ul>
+    <li>
+      <a href="#hero__section">home</a>
+    </li>
+    <li>
+      <a href="#recipe__section">posts</a>
+    </li>
+    <li>
+      <a href="#about__section">About</a>
+    </li>
+    <li>
+      <a href="#extra__section">reviews</a>
+    </li>
+    <li>
+      <a href="#category__section">recipes</a>
+    </li>
+  </ul>
+</div>
+
+<!-- Hero Section -->
+<div class="hero__section" id="hero__section">
+  <div class="hero__text">
+    <h1>Carb Junkies</h1>
+    <p>On a journey to explore food and destinations!</p>
+    <a href="https://www.instagram.com/carbjunkies/" target="_blank" class="btn__dark margin__top">
+      Follow us on
+      <i class="fa fa-instagram"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Recipe Section -->
+<div class="recipe__section" id="recipe__section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-5">
+        <div class="image__wrapper">
+          <a href="https://www.instagram.com/p/CGZ8zC2lF7n/" target="_blank">
+            <img src="/img/first.jpg"></a>
+          <div class="image__wrapper-text">
+            <h5>Infamous Bistro</h5>
+            <p>One of our most beloved post on carbjunkies goes to this place!</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-5">
+        <div class="image__wrapper">
+          <a href="https://www.instagram.com/p/CG41By8FC_a/" target="_blank">
+            <img src="/img/second.jpg"></a>
+          <div class="image__wrapper-text">
+            <h5>Lhasa Tibet Kitchen</h5>
+            <p>Check out our post showing the delicious Kothey Momos!</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-5">
+        <div class="image__wrapper">
+          <a href="https://www.instagram.com/p/CL4I_S8lygw/" target="_blank">
+            <img src="/img/third.jpg"></a>
+          <div class="image__wrapper-text">
+            <h5>Café Ivy</h5>
+            <p>Who doesn't love a fine cup of latte? Click to check out the post!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- About Section -->
+<div class="about__section" id="about__section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="image__background">
+          <img src="/img/user.jpg" class="image__responsive">
+        </div>
+      </div>
+      <div class="col-md-9">
+        <h4>Tanmay & Anshika</h4>
+        <p>Hello all, Welcome to Carbjunkies!<br/>
+          A place where a Software Engineer and a Clinical Psychologist put on their alter egos of restaurant reviewers and Michelin star chefs!<br/>
+          This is the place where we cut short from our busy lifestyles and come together to appreciate the one thing that matters to us the most, good food & good mood!
+          Our sole motive is to put our hearts out to give you the best of our critique for places to visit for your next outings and an honest feedback and what to expect from a cafe/Restaurant.<br/><br/>
+          Hope you have a great time scrolling through the website, feel free to help us with any constructive feedback on how to improve further and don’t forget to hit the top button to follow us on Instagram for the latest updates!
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- More Foods -->
+<div class="extra__section" id="extra__section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mb-5">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="/img/ret2.jpg" class="image__responsive">
+          </div>
+          <div class="col-md-8 bg__dark text__light p-3">
+            <h4>Cafe Ivy, Landour</h4>
+            <p>Let us take you through the unexplored beauty of this sweet little cafe nestled int the foot of Himalayas!</p>
+            <a th:href="@{/reviewView/1}" class="btn__light">Read Review</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-5">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="/img/ret1.jpg" class="image__responsive">
+          </div>
+          <div class="col-md-8 bg__dark text__light p-3">
+            <h4>Sosha Garden Cafe</h4>
+            <p>The place is as chiqué as it sounds! This newly opened garden cafe has won all our hearts and we believe it deserves more appreciation.</p>
+            <a th:href="@{/reviewView/2}" class="btn__light">Read Review</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-5">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="/img/ret3.jpg" class="image__responsive">
+          </div>
+          <div class="col-md-8 bg__dark text__light p-3">
+            <h4>Landour Bakehouse</h4>
+            <p>Our utmost favourite place to have freshly baked croissants and hot chocolate. Click the button to view the full review!</p>
+            <a th:href="@{/reviewView/3}" class="btn__light">Read Review</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-5">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="/img/viewall.jpg" class="image__responsive">
+          </div>
+          <div class="col-md-8 bg__dark text__light p-3">
+            <h4>View All Reviews by Carbjunkies</h4>
+            <p>Click here to view all the restaurant/cafe reviews by Carbjunkies!</p>
+            <a th:href="@{reviewList}" class="btn__light">View All</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Category Section -->
+<div class="category__section" id="category__section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 mb-5">
+        <a th:href="@{/recipeView/1}">
+        <div class="image__wrapper">
+          <img src="/img/cat1.jpg">
+          <div class="image__wrapper-text bg__light">
+            <p>Make scrumptious and hot steamed momos at home with this recipe!</p>
+          </div>
+        </div>
+        </a>
+      </div>
+      <div class="col-md-3 mb-5">
+        <a th:href="@{/recipeView/2}">
+        <div class="image__wrapper">
+          <img src="/img/cat2.jpg">
+          <div class="image__wrapper-text bg__light">
+            <p>This is by far the best recipe for making home made sangria!</p>
+          </div>
+        </div>
+        </a>
+      </div>
+      <div class="col-md-3 mb-5">
+        <a th:href="@{/recipeView/3}">
+        <div class="image__wrapper">
+          <img src="/img/cat3.jpg">
+          <div class="image__wrapper-text bg__light">
+            <p>Make hot, delicious cafe like caramel latte at home following these easy simple steps!</p>
+          </div>
+        </div>
+        </a>
+      </div>
+
+      <div class="col-md-3 mb-5">
+        <a th:href="@{/recipeList}">
+        <div class="image__wrapper">
+          <img src="/img/viewall.jpg">
+          <div class="image__wrapper-text bg__light">
+            <p>Click here to view all recipes by Carbjunkies.</p>
+          </div>
+        </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Subscribe Section -->
+<div class="subscribe__section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <p>Signup for email updates to get each month's latest newsletter.</p>
+      </div>
+      <div class="col-md-4">
+        <form>
+          <input type="text">
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
